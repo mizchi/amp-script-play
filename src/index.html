@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <title>Hello, AMPs</title>
     <link rel="canonical" href="https://amp.dev/ja/documentation/guides-and-tutorials/start/create/basic_markup/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -11,9 +13,24 @@
   </head>
   <body>
     <h1>Welcome to the mobile web</h1>
-    <amp-script sandbox="allow-forms" layout="container" src="https://mizchi-amp-script-plg.netlify.app/hello.js">
+    <!-- <amp-script sandbox="allow-forms" layout="container" src="https://mizchi-amp-script-plg.netlify.app/hello.js"> -->
     <!-- <amp-script layout="container" src="http://localhost:9999/hello.js"> -->
-      <button>hello</button>
-    </amp-script>
+      <!-- <button>hello</button>
+    </amp-script> -->
+
+    <amp-list width="auto"
+      height="100"
+      layout="fixed-height"
+      src="/list/PAGE_VIEW_ID_64">
+      <template type="amp-mustache">
+        <span>{{name}}</span>
+        <!-- <amp-script sandbox="allow-forms" layout="container" src="https://mizchi-amp-script-plg.netlify.app/hello.js"> -->
+        <amp-script layout="container" sandbox="allow-forms" src="http://localhost:9999/hello.js">
+          <button data-id="{{name}}">{{name}}</button>
+        </amp-script>
+      
+      </template>
+    </amp-list>
+
   </body>
 </html>

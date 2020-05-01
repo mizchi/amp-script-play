@@ -9,16 +9,21 @@ function Counter() {
   );
 }
 
+const b = document.querySelector("button");
+console.log();
+const id = b.getAttribute("data-id");
+
 function App() {
   const [state, setState] = useState(false);
   return (
     <Fragment>
       <button
+        data-id={id}
         onClick={() => {
           setState(true);
         }}
       >
-        hello
+        {id}
       </button>
       {state && (
         <div>

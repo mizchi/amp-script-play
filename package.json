@@ -1,9 +1,12 @@
 {
-  "name": "amp-script-play",
+  "private": true,
   "version": "1.0.0",
   "main": "index.js",
   "author": "mizchi <miz404@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
     "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^7.0.2",
